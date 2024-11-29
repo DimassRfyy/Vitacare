@@ -12,9 +12,19 @@ class FrontController extends Controller
     public function index(){
         $products = Product::with('category')->orderBy('id', 'DESC')->take(6)->get();
         $categories = Category::all();
+    
+        $popularProducts = Product::select('products.*')
+            ->join('transaction_details', 'products.id', '=', 'transaction_details.product_id')
+            ->selectRaw('count(transaction_details.product_id) as product_count')
+            ->groupBy('products.id')
+            ->orderByRaw('product_count DESC')
+            ->take(6)
+            ->get();
+    
         return view('front.index', [
             'products' => $products,
             'categories' => $categories,
+            'popularProducts' => $popularProducts,
         ]);
     }
 

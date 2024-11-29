@@ -21,43 +21,46 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## About Project
+## Learning Laravel
 
-This project is a web-based application designed for an online drug store, enabling users to purchase medications online while providing a content management system (CMS) for administrators. The application is built using Laravel 11, styled with Tailwind CSS, and utilizes Spatie for role-based access control.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-Special thanks to [BuildWithAngga](https://buildwithangga.com/) for the inspiration and guidance through their course.
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-## Preview Project
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
--Buyer
+## Laravel Sponsors
 
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-![image](https://github.com/user-attachments/assets/27ab5973-e3f1-413f-ba65-cf5c6f79b523)
+### Premium Partners
 
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[WebReinvent](https://webreinvent.com/)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Jump24](https://jump24.co.uk)**
+- **[Redberry](https://redberry.international/laravel/)**
+- **[Active Logic](https://activelogic.com)**
+- **[byte5](https://byte5.de)**
+- **[OP.GG](https://op.gg)**
 
-![image](https://github.com/user-attachments/assets/437e65b6-0204-482c-9a7a-d41363363fe5)
+## Contributing
 
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-![image](https://github.com/user-attachments/assets/9d1e808d-5d66-4e7e-934c-c3b0d577da65)
+## Code of Conduct
 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-![image](https://github.com/user-attachments/assets/e546129d-e8fe-4980-86b6-5b940c66b995)
+## Security Vulnerabilities
 
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-![image](https://github.com/user-attachments/assets/ae87e969-67f4-44b8-90ac-61d0abefc821)
+## License
 
--Admin
-
-
-![image](https://github.com/user-attachments/assets/2e66b94e-bf72-4c92-b240-557a6899fd4a)
-
-![image](https://github.com/user-attachments/assets/b39b6dac-bf62-4064-9093-e5ab5acaa35d)
-
-![image](https://github.com/user-attachments/assets/c9d48f9c-af5a-4612-be96-40e67ec57f37)
-
-
-
-
-
-
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
