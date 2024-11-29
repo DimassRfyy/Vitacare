@@ -74,7 +74,7 @@
           <img src="{{asset('assets/svgs/ic-chevron.svg')}}" class="transition-all duration-300 size-5" alt="">
         </button>
       </div>
-      <div class="p-6 bg-white rounded-3xl" id="__detailsPayment" style="display: none;">
+      <div class="p-6 bg-white rounded-3xl" id="__detailsPayment">
         <ul class="flex flex-col gap-5">
           <li class="flex items-center justify-between">
             <p class="text-base font-semibold first:font-normal">
@@ -127,35 +127,100 @@
           class="relative rounded-2xl bg-white flex gap-2.5 px-3.5 py-3 items-center justify-start has-[:checked]:ring-2 has-[:checked]:ring-primary transition-all">
           <input type="radio" name="payment_method" id="manualMethod" class="absolute opacity-0">
           <img src="{{asset('assets/svgs/ic-receipt-text-filled.svg')}}" alt="">
-          <p class="text-base font-semibold">
-            Manual
+          <p class="font-semibold text-base">
+            Transfer VA
           </p>
         </label>
         <label
           class="relative rounded-2xl bg-white flex gap-2.5 px-3.5 py-3 items-center justify-start has-[:checked]:ring-2 has-[:checked]:ring-primary transition-all">
-          <input type="radio" name="payment_method" id="creditMethod" class="absolute opacity-0">
+          <input type="radio" name="payment_method" id="digitalWalletMethod" class="absolute opacity-0">
           <img src="{{asset('assets/svgs/ic-card-filled.svg')}}" alt="">
           <p class="text-base font-semibold">
-            Credits
+            E-Wallet
           </p>
           </lab>
       </div>
-      <div class="p-4 mt-0.5 bg-white rounded-3xl hidden" id="manualPaymentDetail">
+      <div class="p-4 mt-0.5 bg-white rounded-3xl" id="manualPaymentDetail">
         <div class="flex flex-col gap-5">
           <p class="text-base font-bold">
             Send Payment to
           </p>
-          <div class="inline-flex items-center gap-2.5">
-            <img src="{{asset('assets/svgs/ic-bank.svg')}}" class="size-5" alt="">
-            <p class="text-base font-semibold">
-              Send Payment to
-            </p>
+          <div class="inline-flex items-center gap-4">
+            <div class="w-[71px] h-[50px] flex shrink-0">
+              <img src="{{ asset('assets/svgs/bca.svg') }}" class="w-full h-full object-contain" alt="bank logo">
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <div class="flex items-center w-fit gap-1">
+                  <p class="font-semibold">Vitacare Official</p>
+                  <div class="w-[18px] h-[18px] flex shrink-0">
+                      <img src="{{ asset('assets/svgs/verify.svg') }}" alt="verify">
+                  </div>
+              </div>
+              <p class="text-[#6E6E70]">8008129839</p>
           </div>
-          <div class="inline-flex items-center gap-2.5">
-            <img src="{{asset('assets/svgs/ic-security-card.svg')}}" class="size-5" alt="">
-            <p class="text-base font-semibold">
-              083902093092
-            </p>
+          </div>
+          <div class="inline-flex items-center gap-4">
+            <div class="w-[71px] h-[50px] flex shrink-0">
+              <img src="{{ asset('assets/svgs/mandiri.svg') }}" class="w-full h-full object-contain" alt="bank logo">
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <div class="flex items-center w-fit gap-1">
+                  <p class="font-semibold">Vitacare Official</p>
+                  <div class="w-[18px] h-[18px] flex shrink-0">
+                      <img src="{{ asset('assets/svgs/verify.svg') }}" alt="verify">
+                  </div>
+              </div>
+              <p class="text-[#6E6E70]">8008129839</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 mt-0.5 bg-white rounded-3xl hidden" id="digitalWallet">
+        <div class="flex flex-col gap-5">
+          <p class="text-base font-bold">
+            Send Payment to
+          </p>
+          <div class="inline-flex items-center gap-4">
+            <div class="w-[71px] h-[50px] flex shrink-0">
+              <img src="{{ asset('assets/svgs/gopay.png') }}" class="w-full h-full object-contain" alt="bank logo">
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <div class="flex items-center w-fit gap-1">
+                  <p class="font-semibold">Vitacare Official Store</p>
+                  <div class="w-[18px] h-[18px] flex shrink-0">
+                      <img src="{{ asset('assets/svgs/verify.svg') }}" alt="verify">
+                  </div>
+              </div>
+              <p class="text-[#6E6E70]">80033529839</p>
+          </div>
+          </div>
+          <div class="inline-flex items-center gap-4">
+            <div class="w-[71px] h-[50px] flex shrink-0">
+              <img src="{{ asset('assets/svgs/dana.png') }}" class="w-full h-full object-contain" alt="bank logo">
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <div class="flex items-center w-fit gap-1">
+                  <p class="font-semibold">Vitacare Official Store</p>
+                  <div class="w-[18px] h-[18px] flex shrink-0">
+                      <img src="{{ asset('assets/svgs/verify.svg') }}" alt="verify">
+                  </div>
+              </div>
+              <p class="text-[#6E6E70]">8332181298</p>
+          </div>
+          </div>
+          <div class="inline-flex items-center gap-4">
+            <div class="w-[71px] h-[50px] flex shrink-0">
+              <img src="{{ asset('assets/svgs/ovo.png') }}" class="w-full h-full object-contain" alt="bank logo">
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <div class="flex items-center w-fit gap-1">
+                  <p class="font-semibold">Vitacare Official Store</p>
+                  <div class="w-[18px] h-[18px] flex shrink-0">
+                      <img src="{{ asset('assets/svgs/verify.svg') }}" alt="verify">
+                  </div>
+              </div>
+              <p class="text-[#6E6E70]">8332181298</p>
+          </div>
           </div>
         </div>
       </div>
@@ -179,25 +244,25 @@
           <div class="flex flex-col gap-2.5">
             <label for="address" class="text-base font-semibold">Address</label>
             <input type="text" name="address" id="address__"
-              class="form-input bg-[url('{{ asset('assets/svgs/ic-location.svg')}}')]" value="Tedjamudita 3">
+              class="form-input bg-[url('{{ asset('assets/svgs/ic-location.svg')}}')]" placeholder="Input your address">
           </div>
           <!-- City -->
           <div class="flex flex-col gap-2.5">
             <label for="city" class="text-base font-semibold">City</label>
             <input type="text" name="city" id="city__" class="form-input bg-[url('{{ asset('assets/svgs/ic-map.svg')}}')]"
-              value="Bolavia">
+              placeholder="Input your city">
           </div>
           <!-- Post Code -->
           <div class="flex flex-col gap-2.5">
             <label for="post_code" class="text-base font-semibold">Post Code</label>
             <input type="number" name="post_code" id="postcode__"
-              class="form-input bg-[url('{{ asset('assets/svgs/ic-house.svg')}}')]" value="22081882">
+              class="form-input bg-[url('{{ asset('assets/svgs/ic-house.svg')}}')]" placeholder="Input your post code">
           </div>
           <!-- Phone Number -->
           <div class="flex flex-col gap-2.5">
             <label for="phone_number" class="text-base font-semibold">Phone Number</label>
             <input type="number" name="phone_number" id="phonenumber__"
-              class="form-input bg-[url('{{ asset('assets/svgs/ic-phone.svg')}}')]" value="602192301923">
+              class="form-input bg-[url('{{ asset('assets/svgs/ic-phone.svg')}}')]" placeholder="Input your phone number">
           </div>
           <!-- Add. Notes -->
           <div class="flex flex-col gap-2.5">
@@ -205,7 +270,7 @@
             <span class="relative">
               <img src="{{asset('assets/svgs/ic-edit.svg')}}" class="absolute size-5 top-4 left-4" alt="">
               <textarea name="notes" id="notes__"
-                class="form-input !rounded-2xl w-full min-h-[150px]">nearby with local shops that close with the big river next to aftermarket place.</textarea>
+                class="form-input !rounded-2xl w-full min-h-[150px]" placeholder="Add notes (Optional)"></textarea>
             </span>
           </div>
           <!-- Proof of Payment -->

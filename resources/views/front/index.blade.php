@@ -44,9 +44,9 @@
 						<span class="block rounded-full size-1.5 bg-primary absolute top-0 right-0 -translate-x-1/2"></span>
 					</span>
 				</button>
-				<button type="button" class="p-2 bg-white rounded-full">
+				<a href="/carts" class="p-2 bg-white rounded-full">
 					<img src="{{asset('assets/svgs/ic-shopping-bag.svg')}}" class="size-5" alt="">
-				</button>
+				</a>
 			</div>
 		</section>
 
@@ -104,8 +104,8 @@
 			<div style="background-image: url('{{asset('assets/svgs/pipeline.svg')}}')"
 				class="flex justify-between gap-5 items-center bg-lilac py-3.5 px-4 rounded-2xl relative bg-left bg-no-repeat bg-cover">
 				<p class="text-base font-bold">
-					Your last order has <br>
-					been proceed
+					Keep taking care of<br>
+					your health 
 				</p>
 				<img src="{{asset('assets/svgs/nekodicine.svg')}}" class="w-[90px] h-[70px]" alt="">
 			</div>
@@ -144,7 +144,7 @@
                                 {{ $product->name }}
                             </a>
                             <p class="text-sm truncate text-grey">
-                                Rp {{ $product->price }}
+                                Rp. {{ number_format($product->price, 0, ',', '.') }}
                             </p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
 								{{ $product->name }}
 							</a>
 							<p class="text-sm text-grey">
-								Rp 899.000
+								Rp. {{ number_format($product->price, 0, ',', '.') }}
 							</p>
 						</div>
 						<div class="flex">

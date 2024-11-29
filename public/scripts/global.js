@@ -7,8 +7,19 @@ $(() => {
 
   // Toggle manual payment details 
   $('input[name=payment_method]').on('change', function (e) {
-    let target = $('#manualPaymentDetail')
-    if ($(this).is(':checked') && $(this).attr('id') == 'manualMethod') target.show()
-    else target.hide()
+    let manualTarget = $('#manualPaymentDetail');
+    let digitalWalletTarget = $('#digitalWallet');
+
+    if ($(this).is(':checked') && $(this).attr('id') == 'manualMethod') {
+        manualTarget.show();
+    } else {
+        manualTarget.hide();
+    }
+
+    if ($(this).is(':checked') && $(this).attr('id') == 'digitalWalletMethod') {
+        digitalWalletTarget.show();
+    } else {
+        digitalWalletTarget.hide();
+    }
   })
 })
