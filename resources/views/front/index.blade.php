@@ -17,7 +17,11 @@
 			<div class="flex items-center gap-3">
 				@auth
 				<div class="bg-white rounded-full p-[5px] flex justify-center items-center">
+					@if(Auth::user()->avatar)
+						<img src="{{ Storage::url(Auth::user()->avatar) }}" class="size-[50px] rounded-full" alt="">
+					@else
 					<img src="{{asset('assets/svgs/avatar.svg')}}" class="size-[50px] rounded-full" alt="">
+					@endif
 				</div>
 				<div class="">
 					<p class="text-base font-semibold capitalize text-primary">
@@ -26,7 +30,11 @@
 						
 					</p>
 					<p class="text-sm">
-						Customer
+						@if (Auth::user()->hasRole('owner'))
+							Owner
+						@else
+							Customer
+						@endif
 					</p>
 				</div>
 				@endauth
@@ -53,7 +61,7 @@
 		<!-- Floating navigation -->
 		<nav class="fixed z-50 bottom-[30px] bg-black rounded-[50px] pt-[18px] px-10 left-1/2 -translate-x-1/2 w-80">
 			<div class="flex items-center justify-center gap-5 flex-nowrap">
-				<a href="#" class="flex flex-col items-center justify-center gap-1 px-1 group is-active">
+				<a href="/" class="flex flex-col items-center justify-center gap-1 px-1 group is-active">
 					<img src="{{asset('assets/svgs/ic-grid.svg')}}" class="filter-to-grey group-[.is-active]:filter-to-primary" alt="">
 					<p
 						class="border-b-4 border-transparent group-[.is-active]:border-primary pb-3 text-xs text-center font-semibold text-grey group-[.is-active]:text-primary">
@@ -68,7 +76,7 @@
 						Stores
 					</p>
 				</a>
-				<a href="#" class="flex flex-col items-center justify-center gap-1 px-1 group">
+				<a href="{{ route('productTransaction.index') }}" class="flex flex-col items-center justify-center gap-1 px-1 group">
 					<img src="{{asset('assets/svgs/ic-note.svg')}}" class="filter-to-grey group-[.is-active]:filter-to-primary" alt="">
 					<p
 						class="border-b-4 border-transparent group-[.is-active]:border-primary pb-3 text-xs text-center font-semibold text-grey group-[.is-active]:text-primary">
@@ -186,7 +194,7 @@
 						alt="">
 					<div class="flex flex-wrap items-center justify-between w-full gap-1">
 						<div class="flex flex-col gap-1">
-							<a href="details.html"
+							<a href="{{ route('front.product.details', $product->slug) }}"
 								class="text-base font-semibold stretched-link whitespace-nowrap w-[150px] truncate">
 								{{ $product->name }}
 							</a>

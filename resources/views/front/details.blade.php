@@ -27,7 +27,7 @@
 
     <img src="{{ Storage::url($product->photo) }}" class="h-[220px] w-auto mx-auto relative z-10" alt="">
     <section class="bg-white rounded-t-[60px] pt-[60px] px-6 pb-5 -mt-9 flex flex-col gap-5 max-w-[425px] mx-auto">
-      <div class=" pb-40">
+      <div style="padding-bottom: 7rem">
         <div class="flex items-center justify-between">
           <div class="flex flex-col gap-1">
             <p class="font-bold text-[22px]">
@@ -109,7 +109,7 @@
                   <img src="{{asset('assets/svgs/avatar.svg')}}" alt="icon" class="size-full" />
                 </div>
                 <div class="flex flex-col gap-[6px] w-full">
-                  <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-between mb-1">
                     <p class="text-sm leading-[21px] font-semibold">vanica</p>
                     <div class="flex gap-[2px]">
                       <div class="size-5 flex shrink-0">
@@ -135,6 +135,27 @@
             </div>
           </div>
         </div>
+        <section class="wrapper !px-0 flex flex-col gap-2.5">
+          <div id="proudctsSlider" class="relative">
+                    @forelse ($randomProducts as $product)
+                        <div class="rounded-2xl bg-gray-100 py-3.5 pl-4 pr-[22px] inline-flex flex-col gap-4 items-start mr-4 relative w-[158px]">
+                            <img src="{{ Storage::url($product->photo) }}" class="h-[100px] w-full object-contain" alt="">
+                            <div>
+                                <a href="{{ route('front.product.details', $product->slug) }}" class="text-base font-semibold w-[120px] truncate stretched-link block">
+                                    {{ $product->name }}
+                                </a>
+                                <p class="text-sm truncate text-grey">
+                                    Rp. {{ number_format($product->price, 0, ',', '.') }}
+                                </p>
+                            </div>
+                        </div>
+                    @empty
+                        <p>
+                            Belum Ada Product Tersedia
+                        </p>
+                    @endforelse
+          </div>
+        </section>
       </div>
       
 

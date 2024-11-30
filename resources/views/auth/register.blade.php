@@ -15,12 +15,18 @@
 
     <div class="flex flex-col items-center px-6 py-10 min-h-dvh">
       <img src="{{asset('assets/images/vitacare.png')}}" class="mb-[53px]" alt="">
-      <form action="{{ route('register') }}" method="POST" class="mx-auto max-w-[345px] w-full p-6 bg-white rounded-3xl mt-auto" id="deliveryForm">
+      <form enctype="multipart/form-data" action="{{ route('register') }}" method="POST" class="mx-auto max-w-[345px] w-full p-6 bg-white rounded-3xl mt-auto" id="deliveryForm">
         @csrf
         <div class="flex flex-col gap-5">
           <p class="text-[22px] font-bold">
             New Account
           </p>
+          <!-- Avatar -->
+          <div class="flex flex-col gap-2.5">
+            <label for="avatar" class="text-base font-semibold">Avatar</label>
+            <input type="file" name="avatar" id="avatar__" style="background-image: url('{{asset('assets/svgs/ic-profile.svg')}}') "
+              class="form-input ">
+          </div>
           <!-- Full Name -->
           <div class="flex flex-col gap-2.5">
             <label for="fullname" class="text-base font-semibold">Full Name</label>

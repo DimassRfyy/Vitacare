@@ -29,8 +29,10 @@ class FrontController extends Controller
     }
 
     public function details(Product $product){
+        $randomProducts = Product::where('id', '!=', $product->id)->inRandomOrder()->limit(4)->get(); 
         return view('front.details', [
             'product' => $product,
+            'randomProducts' => $randomProducts,
         ]);
     }
 
