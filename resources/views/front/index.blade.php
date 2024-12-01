@@ -16,13 +16,18 @@
 			
 			<div class="flex items-center gap-3">
 				@auth
-				<div class="bg-white rounded-full p-[5px] flex justify-center items-center">
-					@if(Auth::user()->avatar)
-						<img src="{{ Storage::url(Auth::user()->avatar) }}" class="size-[50px] rounded-full" alt="">
-					@else
-					<img src="{{asset('assets/svgs/avatar.svg')}}" class="size-[50px] rounded-full" alt="">
-					@endif
-				</div>
+				<a href="/dashboard" class="bg-white rounded-full p-[5px] flex justify-center items-center">
+					@if (Auth::user()->avatar)
+                            @php
+                                $avatarUrl = Str::startsWith(Auth::user()->avatar, 'http') 
+                                             ? Auth::user()->avatar 
+                                             : Storage::url(Auth::user()->avatar);
+                            @endphp
+                            <img src="{{ $avatarUrl }}" class="size-[50px] rounded-full" alt="photo">                   
+                        @else
+                            <img src="{{ asset('/images/photos/default-photo.svg') }}" class="rounded-full" alt="photo">
+                        @endif    
+				</a>
 				<div class="">
 					<p class="text-base font-semibold capitalize text-primary">
 						

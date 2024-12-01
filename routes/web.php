@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontController;
@@ -13,6 +14,9 @@ Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/search', [FrontController::class, 'search'])->name('front.search');
 Route::get('/details/{product:slug}', [FrontController::class, 'details'])->name('front.product.details');
 Route::get('/category/{category}', [FrontController::class, 'category'])->name('front.product.category');
+
+Route::get('/auth/{provider}/redirect',[SocialiteController::class,'redirect'])->name('socialiteRedirect');
+Route::get('/auth/{provider}/callback',[SocialiteController::class,'callback'])->name('socialiteCallback');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

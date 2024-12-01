@@ -137,23 +137,19 @@
         </div>
         <section class="wrapper !px-0 flex flex-col gap-2.5">
           <div id="proudctsSlider" class="relative">
-                    @forelse ($randomProducts as $product)
+                  @foreach ($randomProducts as $randomProduct)
                         <div class="rounded-2xl bg-gray-100 py-3.5 pl-4 pr-[22px] inline-flex flex-col gap-4 items-start mr-4 relative w-[158px]">
-                            <img src="{{ Storage::url($product->photo) }}" class="h-[100px] w-full object-contain" alt="">
+                            <img src="{{ Storage::url($randomProduct->photo) }}" class="h-[100px] w-full object-contain" alt="">
                             <div>
-                                <a href="{{ route('front.product.details', $product->slug) }}" class="text-base font-semibold w-[120px] truncate stretched-link block">
-                                    {{ $product->name }}
+                                <a href="{{ route('front.product.details', $randomProduct->slug) }}" class="text-base font-semibold w-[120px] truncate stretched-link block">
+                                    {{ $randomProduct->name }}
                                 </a>
                                 <p class="text-sm truncate text-grey">
-                                    Rp. {{ number_format($product->price, 0, ',', '.') }}
+                                    Rp. {{ number_format($randomProduct->price, 0, ',', '.') }}
                                 </p>
                             </div>
                         </div>
-                    @empty
-                        <p>
-                            Belum Ada Product Tersedia
-                        </p>
-                    @endforelse
+                  @endforeach
           </div>
         </section>
       </div>
